@@ -57,8 +57,7 @@ VCardParser = {
                     x = n + 1;
                     for (x; x<lines.length; x++) {
                         encodedLine = lines[x];
-                        if(!(regexps['complex'].test(encodedLine)) && !(regexps['simple'].test(encodedLine)) && (encodedLine[0] === ' ')) {
-                            // This line is a binary line
+                        if (this._isBinaryLine(encodedLine)){
                             if (encodedLine[0] === ' ') {
                                 encodedLine = encodedLine.substr(1);  // A binary line must begin with a space
                             }
@@ -183,6 +182,10 @@ VCardParser = {
         }
         returnLine = returnLine.slice(0, -2);
         return returnLine;
+    },
+
+    _isBinaryLine: function(encodedLine) {
+        return (!(regexps['complex'].test(encodedLine)) && !(regexps['simple'].test(encodedLine)) && (encodedLine[0] === ' '));
     }
 
 
