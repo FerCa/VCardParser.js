@@ -1,0 +1,18 @@
+
+VCardParser.js is a VCard parser and composer, this means that is able to parse a vcard into a javascript object
+and to compose a javascript object into a VCard.
+
+The VCard format accepted by this tool aims to be compilant with the RFC 2426 (http://www.ietf.org/rfc/rfc2426.txt)
+despite that, some properties could not be parsed, any property not parsed is stored in a NOTPARSED object property
+that will be recovered when composing the vcard again.
+
+To see examples of the usage please see the Unit Test in the Test directory.
+
+VCardParser.js
+Ferran Caellas Puig (FerCa)
+Released under the MIT Licence
+Some parts of the code are based in the vcard.js from Matt Thomson released also under the MIT Licence
+(Specificaly the regexp, the javascript 1.6 compatibility).
+
+
+
